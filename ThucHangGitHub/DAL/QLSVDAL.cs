@@ -68,7 +68,6 @@ namespace ThucHangGitHub.DAL
             }
             return dt;
         }
-<<<<<<< HEAD
         public DataTable GetDataTableByList(List<SV> list)
         {
             dt = CreatDataTable();
@@ -146,13 +145,12 @@ namespace ThucHangGitHub.DAL
             return dt;
         }
 
-=======
         public void DeleteSV(int id)
         {
             var sv = db.SVs.Where(s => s.SVID == id).FirstOrDefault();
             db.SVs.Remove(sv);
             db.SaveChanges();
         }
->>>>>>> main
+
     }
 }

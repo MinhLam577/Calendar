@@ -15,7 +15,7 @@ namespace ThucHangGitHub.BLL
         {
             return QLSVDAL.Instance.GetRecord("All", "");
         }
-<<<<<<< HEAD
+
         public DataTable SortSV(string yc, DataTable dt)
         {
             return QLSVDAL.Instance.SortSV(yc, dt);
@@ -38,11 +38,10 @@ namespace ThucHangGitHub.BLL
             return QLSVDAL.Instance.GetRecord(clname, txt);
         }
 
-=======
         public void Delete(int id)
         {
             QLSVDAL.Instance.DeleteSV(id);
         }
->>>>>>> main
+
     }
 }
