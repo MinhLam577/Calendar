@@ -37,7 +37,10 @@ namespace ThucHangGitHub.BLL
         {
             return QLSVDAL.Instance.GetRecord(clname, txt);
         }
-
+        public List<string> GetCBCL()
+        {
+            return QLSVDAL.Instance.GetCBCL();
+        }
         public void Delete(int id)
         {
             QLSVDAL.Instance.DeleteSV(id);

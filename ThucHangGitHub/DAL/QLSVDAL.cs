@@ -145,11 +145,23 @@ namespace ThucHangGitHub.DAL
             return dt;
         }
 
+        public List<string> GetCBCL()
+        {
+            var dt = db.LopSHes;
+            List<string> list = new List<string>() { "All" };
+
+            foreach (var i in dt)
+            {
+                list.Add(i.CLName);
+            }
+            return list;
+        }
         public void DeleteSV(int id)
         {
             var sv = db.SVs.Where(s => s.SVID == id).FirstOrDefault();
             db.SVs.Remove(sv);
             db.SaveChanges();
+
         }
 
     }

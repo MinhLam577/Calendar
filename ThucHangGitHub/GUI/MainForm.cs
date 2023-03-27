@@ -19,6 +19,7 @@ namespace ThucHangGitHub.GUI
         {
             InitializeComponent();
             LoadDGV();
+            //LoadCBBCL();
         }
         public void LoadDGV()
         {
@@ -34,6 +35,25 @@ namespace ThucHangGitHub.GUI
         private void cb_sort_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        public void LoadCBBCL()
+        {
+            QLSVBLL qLSVBLL = new QLSVBLL();
+            cb_ClassName.DataSource = qLSVBLL.GetCBCL();
+        }
+
+        private void btn_delelte_Click(object sender, EventArgs e)
+        {
+            QLSVBLL db = new QLSVBLL();
+            if (dgv_sv.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow r in dgv_sv.SelectedRows)
+                {
+                   db.Delete(Convert.ToInt32(r.Cells["ID"].Value.ToString()));
+
+                }
+                LoadDGV();
+            }
         }
     }
 }
