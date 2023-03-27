@@ -15,5 +15,9 @@ namespace ThucHangGitHub.BLL
         {
             return QLSVDAL.Instance.GetRecord("All", "");
         }
+        public void Delete(int id)
+        {
+            QLSVDAL.Instance.DeleteSV(id);
+        }
     }
 }
