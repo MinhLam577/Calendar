@@ -23,7 +23,18 @@ namespace ThucHangGitHub.GUI
         }
         public void LoadDGV()
         {
-            dgv_sv.DataSource = QLSVDAL.Instance.GetRecord("All", "");
+            dgv_sv.DataSource = QLSVBLL.Instance.GetRecord("All", "");
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = dgv_sv.DataSource as DataTable;
+            dgv_sv.DataSource = QLSVBLL.Instance.SortSV(cb_sort.Text, dt);
+        }
+
+        private void cb_sort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
         public void LoadCBBCL()
         {
