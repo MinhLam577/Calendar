@@ -9,6 +9,6 @@ namespace ThucHangGitHub.BLL
 {
     class Class1
     {
-
+        public Class1() { }
     }
 }
