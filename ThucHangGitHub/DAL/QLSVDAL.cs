@@ -68,5 +68,82 @@ namespace ThucHangGitHub.DAL
             }
             return dt;
         }
+        public DataTable GetDataTableByList(List<SV> list)
+        {
+            dt = CreatDataTable();
+            foreach (SV s in list)
+            {
+                string clname = GetClassByID((int)s.SVCLID);
+                dt.Rows.Add(s.SVID, s.SVName, clname, s.SVDtb, s.SVNS, s.SVGender, s.SVPicture, s.SVHb, s.SVCccd);
+            }
+
+            return dt;
+        }
+        public string GetClassByID(int id)
+        {
+            return QLSVDB.Instance.LopSHes.Where(s => s.CLID == id).FirstOrDefault().CLName;
+        }
+        public int GetByClassID(string name)
+        {
+            return QLSVDB.Instance.LopSHes.Where(s => s.CLName == name).FirstOrDefault().CLID;
+        }
+        public DataTable SortSV(string yc, DataTable dt)
+        {
+            List<SV> list = new List<SV>();
+            foreach (DataRow i in dt.Rows)
+            {
+                int id = Convert.ToInt32(i["ID"].ToString());
+                string name = i["Name"].ToString();
+                int clid = GetByClassID(i["Class"].ToString());
+                double score = Convert.ToDouble(i["Score"].ToString());
+                DateTime ns = Convert.ToDateTime(i["Date"].ToString());
+                bool gen = Convert.ToBoolean(i["Gender"].ToString());
+                bool pic = Convert.ToBoolean(i["Picture"].ToString());
+                bool hb = Convert.ToBoolean(i["HocBa"].ToString());
+                bool cccd = Convert.ToBoolean(i["Cccd"].ToString());
+                SV sv = new SV()
+                {
+                    SVID = id,
+                    SVCLID = clid,
+                    SVName = name,
+                    SVDtb = score,
+                    SVCccd = cccd,
+                    SVGender = gen,
+                    SVHb = hb,
+                    SVNS = ns,
+                    SVPicture = pic
+                };
+                list.Add(sv);
+            }
+            switch (yc)
+            {
+                case "Class":
+                    list = list.OrderBy(s => s.SVCLID).ToList();
+                    dt = GetDataTableByList(list);
+                    break;
+                case "Name":
+                    list = list.OrderBy(s => s.SVName).ToList();
+                    dt = GetDataTableByList(list);
+                    break;
+                case "ID":
+                    list = list.OrderBy(s => s.SVID).ToList();
+                    dt = GetDataTableByList(list);
+                    break;
+                case "Dtb":
+                    list = list.OrderBy(s => s.SVDtb).ToList();
+                    dt = GetDataTableByList(list);
+                    break;
+                case "NS":
+                    list = list.OrderBy(s => s.SVNS).ToList();
+                    dt = GetDataTableByList(list);
+                    break;
+                case "Gender":
+                    list = list.OrderBy(s => s.SVGender).ToList();
+                    dt = GetDataTableByList(list);
+                    break;
+            }
+            return dt;
+        }
+
     }
 }

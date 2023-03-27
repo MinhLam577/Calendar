@@ -24,7 +24,17 @@ namespace ThucHangGitHub.DTO
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+        private static QLSVDB _instance;
+        public static QLSVDB Instance
+        {
+            get
+            {
+                if (_instance == null)
+                    _instance = new QLSVDB();
+                return _instance;
+            }
+            private set { }
+        }
         public virtual DbSet<LopSH> LopSHes { get; set; }
         public virtual DbSet<SV> SVs { get; set; }
     }
