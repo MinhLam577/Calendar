@@ -68,6 +68,7 @@ namespace ThucHangGitHub.DAL
             }
             return dt;
         }
+<<<<<<< HEAD
         public List<string> GetCBCL()
         {
             var dt = db.LopSHes;
@@ -78,6 +79,13 @@ namespace ThucHangGitHub.DAL
                 list.Add(i.CLName);
             }
             return list;
+=======
+        public void DeleteSV(int id)
+        {
+            var sv = db.SVs.Where(s => s.SVID == id).FirstOrDefault();
+            db.SVs.Remove(sv);
+            db.SaveChanges();
+>>>>>>> main
         }
     }
 }
