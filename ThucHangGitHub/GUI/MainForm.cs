@@ -19,10 +19,16 @@ namespace ThucHangGitHub.GUI
         {
             InitializeComponent();
             LoadDGV();
+            //LoadCBBCL();
         }
         public void LoadDGV()
         {
             dgv_sv.DataSource = QLSVDAL.Instance.GetRecord("All", "");
+        }
+        public void LoadCBBCL()
+        {
+            QLSVBLL qLSVBLL = new QLSVBLL();
+            cb_ClassName.DataSource = qLSVBLL.GetCBCL();
         }
     }
 }

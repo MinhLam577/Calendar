@@ -68,5 +68,16 @@ namespace ThucHangGitHub.DAL
             }
             return dt;
         }
+        public List<string> GetCBCL()
+        {
+            var dt = db.LopSHes;
+            List<string> list = new List<string>() { "All" };
+
+            foreach (var i in dt)
+            {
+                list.Add(i.CLName);
+            }
+            return list;
+        }
     }
 }
