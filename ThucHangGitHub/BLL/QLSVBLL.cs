@@ -15,15 +15,13 @@ namespace ThucHangGitHub.BLL
         {
             return QLSVDAL.Instance.GetRecord("All", "");
         }
-<<<<<<< HEAD
         public List<string> GetCBCL()
         {
             return QLSVDAL.Instance.GetCBCL();
-=======
+        }
         public void Delete(int id)
         {
             QLSVDAL.Instance.DeleteSV(id);
->>>>>>> main
         }
     }
 }

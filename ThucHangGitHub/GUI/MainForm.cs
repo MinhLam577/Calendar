@@ -30,5 +30,19 @@ namespace ThucHangGitHub.GUI
             QLSVBLL qLSVBLL = new QLSVBLL();
             cb_ClassName.DataSource = qLSVBLL.GetCBCL();
         }
+
+        private void btn_delelte_Click(object sender, EventArgs e)
+        {
+            QLSVBLL db = new QLSVBLL();
+            if (dgv_sv.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow r in dgv_sv.SelectedRows)
+                {
+                   db.Delete(Convert.ToInt32(r.Cells["ID"].Value.ToString()));
+
+                }
+                LoadDGV();
+            }
+        }
     }
 }

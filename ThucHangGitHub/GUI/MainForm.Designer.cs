@@ -32,6 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cb_ClassName = new System.Windows.Forms.ComboBox();
             this.lb_class = new System.Windows.Forms.Label();
+            this.btn_delelte = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +82,23 @@
             this.lb_class.TabIndex = 21;
             this.lb_class.Text = "Class";
             // 
+            // btn_delelte
+            // 
+            this.btn_delelte.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_delelte.Location = new System.Drawing.Point(273, 291);
+            this.btn_delelte.Name = "btn_delelte";
+            this.btn_delelte.Size = new System.Drawing.Size(131, 40);
+            this.btn_delelte.TabIndex = 23;
+            this.btn_delelte.Text = "Del";
+            this.btn_delelte.UseVisualStyleBackColor = true;
+            this.btn_delelte.Click += new System.EventHandler(this.btn_delelte_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 521);
+            this.Controls.Add(this.btn_delelte);
             this.Controls.Add(this.cb_ClassName);
             this.Controls.Add(this.lb_class);
             this.Controls.Add(this.button1);
@@ -104,5 +117,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cb_ClassName;
         private System.Windows.Forms.Label lb_class;
+        private System.Windows.Forms.Button btn_delelte;
     }
 }
