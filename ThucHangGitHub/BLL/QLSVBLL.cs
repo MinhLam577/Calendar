@@ -5,10 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using ThucHangGitHub.DTO;
 using ThucHangGitHub.DAL;
+using System.Data;
+
 namespace ThucHangGitHub.BLL
 {
-    class Class1
+    class QLSVBLL
     {
-        public Class1() { }
+        public DataTable GetRecord()
+        {
+            return QLSVDAL.Instance.GetRecord("All", "");
+        }
     }
 }
