@@ -19,10 +19,30 @@ namespace ThucHangGitHub.GUI
         {
             InitializeComponent();
             LoadDGV();
+            //LoadCBBCL();
         }
         public void LoadDGV()
         {
             dgv_sv.DataSource = QLSVDAL.Instance.GetRecord("All", "");
+        }
+        public void LoadCBBCL()
+        {
+            QLSVBLL qLSVBLL = new QLSVBLL();
+            cb_ClassName.DataSource = qLSVBLL.GetCBCL();
+        }
+
+        private void btn_delelte_Click(object sender, EventArgs e)
+        {
+            QLSVBLL db = new QLSVBLL();
+            if (dgv_sv.SelectedRows.Count > 0)
+            {
+                foreach (DataGridViewRow r in dgv_sv.SelectedRows)
+                {
+                   db.Delete(Convert.ToInt32(r.Cells["ID"].Value.ToString()));
+
+                }
+                LoadDGV();
+            }
         }
     }
 }
