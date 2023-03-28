@@ -35,6 +35,8 @@
             this.cb_ClassName = new System.Windows.Forms.ComboBox();
             this.lb_class = new System.Windows.Forms.Label();
             this.btn_delelte = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_sv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +86,7 @@
             this.cb_sort.Size = new System.Drawing.Size(265, 37);
             this.cb_sort.TabIndex = 22;
             this.cb_sort.SelectedIndexChanged += new System.EventHandler(this.cb_sort_SelectedIndexChanged);
+            // 
             // cb_ClassName
             // 
             this.cb_ClassName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -122,11 +125,29 @@
             this.btn_delelte.UseVisualStyleBackColor = true;
             this.btn_delelte.Click += new System.EventHandler(this.btn_delelte_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(535, 422);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(89, 55);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "search";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(644, 443);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(227, 22);
+            this.textBox1.TabIndex = 25;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 521);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.cb_sort);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_delelte);
@@ -151,5 +172,7 @@
         private System.Windows.Forms.ComboBox cb_ClassName;
         private System.Windows.Forms.Label lb_class;
         private System.Windows.Forms.Button btn_delelte;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
