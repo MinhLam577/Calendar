@@ -2,7 +2,6 @@ thay đổi trong branch test lần 1
 thay đổi trong main lần 1
 thay đổi trong main lần 2
 thay đổi trong main lần 3
-<<<<<<< HEAD
 thay đổi lần 4
 thêm vào thay đổi lần 1
 thêm vào thay đổi lần 2
@@ -12,5 +11,3 @@ thay đổi lần 6
 thay đổi lần 7
 thay đổi lần 10
 thay đổi lần 11
-=======
->>>>>>> main
