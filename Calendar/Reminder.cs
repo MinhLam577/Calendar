@@ -15,11 +15,9 @@ namespace Calendar
     public partial class Reminder
     {
         public int RMDID { get; set; }
-        public Nullable<System.DateTime> RMDDay { get; set; }
-        public Nullable<System.TimeSpan> RMDTime { get; set; }
+        public Nullable<System.DateTime> RMDTime { get; set; }
         public string Description { get; set; }
         public Nullable<int> PersonID { get; set; }
-        public Nullable<bool> BaoThuc { get; set; }
     
         public virtual Person Person { get; set; }
     }

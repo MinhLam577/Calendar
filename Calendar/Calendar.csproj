@@ -61,6 +61,12 @@
     <Compile Include="AddOrEditForm.Designer.cs">
       <DependentUpon>AddOrEditForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddReminderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddReminderForm.Designer.cs">
+      <DependentUpon>AddReminderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Appointment.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -99,8 +105,12 @@
     <Compile Include="Reminder.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ReminderDAL.cs" />
     <EmbeddedResource Include="AddOrEditForm.resx">
       <DependentUpon>AddOrEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddReminderForm.resx">
+      <DependentUpon>AddReminderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

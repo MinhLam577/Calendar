@@ -25,9 +25,9 @@ namespace Calendar
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Reminder> Reminders { get; set; }
         public virtual DbSet<ListUserInAppointment> ListUserInAppointments { get; set; }
         public virtual DbSet<Person> People { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
+        public virtual DbSet<Reminder> Reminders { get; set; }
     }
 }
