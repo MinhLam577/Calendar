@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CalendarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Appointment">
+    <Key>
+      <PropertyRef Name="AppointmentID" />
+    </Key>
+    <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppName" Type="nvarchar(max)" />
+    <Property Name="DateAppointmentStart" Type="smalldatetime" />
+    <Property Name="DateAppointmentEnd" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="ListUserInAppointment">
+    <Key>
+      <PropertyRef Name="ListID" />
+    </Key>
+    <Property Name="ListID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AppointmentID" Type="int" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="HostID" Type="int" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="PersonID" />
+    </Key>
+    <Property Name="PersonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Gmail" Type="varchar(max)" />
+    <Property Name="PersonName" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Reminder">
+    <Key>
+      <PropertyRef Name="RMDID" />
+    </Key>
+    <Property Name="RMDID" Type="int" Nullable="false" />
+    <Property Name="RMDDay" Type="date" />
+    <Property Name="RMDTime" Type="time" Precision="7" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="PersonID" Type="int" />
+    <Property Name="BaoThuc" Type="bit" />
+  </EntityType>
+  <Association Name="FK_ListUserInAppointment_Appointment">
+    <End Role="Appointment" Type="Self.Appointment" Multiplicity="0..1" />
+    <End Role="ListUserInAppointment" Type="Self.ListUserInAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Appointment">
+        <PropertyRef Name="AppointmentID" />
+      </Principal>
+      <Dependent Role="ListUserInAppointment">
+        <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListUserInAppointment_Person">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="ListUserInAppointment" Type="Self.ListUserInAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="ListUserInAppointment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListUserInAppointment_Person1">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="ListUserInAppointment" Type="Self.ListUserInAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="ListUserInAppointment">
+        <PropertyRef Name="HostID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reminder_Person">
+    <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+    <End Role="Reminder" Type="Self.Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="PersonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CalendarModelStoreContainer">
+    <EntitySet Name="Appointment" EntityType="Self.Appointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListUserInAppointment" EntityType="Self.ListUserInAppointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reminder" EntityType="Self.Reminder" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ListUserInAppointment_Appointment" Association="Self.FK_ListUserInAppointment_Appointment">
+      <End Role="Appointment" EntitySet="Appointment" />
+      <End Role="ListUserInAppointment" EntitySet="ListUserInAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListUserInAppointment_Person" Association="Self.FK_ListUserInAppointment_Person">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="ListUserInAppointment" EntitySet="ListUserInAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListUserInAppointment_Person1" Association="Self.FK_ListUserInAppointment_Person1">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="ListUserInAppointment" EntitySet="ListUserInAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reminder_Person" Association="Self.FK_Reminder_Person">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Reminder" EntitySet="Reminder" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

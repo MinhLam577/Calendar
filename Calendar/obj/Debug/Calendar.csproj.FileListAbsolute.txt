@@ -1,0 +1,17 @@
+E:\Calendar\bin\Debug\Calendar.exe.config
+E:\Calendar\bin\Debug\Calendar.exe
+E:\Calendar\bin\Debug\Calendar.pdb
+E:\Calendar\bin\Debug\EntityFramework.dll
+E:\Calendar\bin\Debug\EntityFramework.SqlServer.dll
+E:\Calendar\bin\Debug\EntityFramework.xml
+E:\Calendar\bin\Debug\EntityFramework.SqlServer.xml
+E:\Calendar\obj\Debug\Calendar.csproj.AssemblyReference.cache
+E:\Calendar\obj\Debug\Calendar.csproj.SuggestedBindingRedirects.cache
+E:\Calendar\obj\Debug\Calendar.Properties.Resources.resources
+E:\Calendar\obj\Debug\Calendar.csproj.GenerateResource.cache
+E:\Calendar\obj\Debug\Calendar.csproj.CoreCompileInputs.cache
+E:\Calendar\obj\Debug\Calendar.csproj.CopyComplete
+E:\Calendar\obj\Debug\Calendar.exe
+E:\Calendar\obj\Debug\Calendar.pdb
+E:\Calendar\obj\Debug\Calendar.MainForm.resources
+E:\Calendar\obj\Debug\Calendar.AddOrEditForm.resources
