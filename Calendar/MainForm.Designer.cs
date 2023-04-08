@@ -60,7 +60,7 @@
             // 
             this.btn_addapp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_addapp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addapp.Location = new System.Drawing.Point(12, 513);
+            this.btn_addapp.Location = new System.Drawing.Point(34, 513);
             this.btn_addapp.Name = "btn_addapp";
             this.btn_addapp.Size = new System.Drawing.Size(195, 82);
             this.btn_addapp.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             this.btn_addrmd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_addrmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addrmd.Location = new System.Drawing.Point(795, 513);
+            this.btn_addrmd.Location = new System.Drawing.Point(788, 513);
             this.btn_addrmd.Name = "btn_addrmd";
             this.btn_addrmd.Size = new System.Drawing.Size(195, 82);
             this.btn_addrmd.TabIndex = 7;
@@ -84,7 +84,7 @@
             // 
             this.btn_join.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_join.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_join.Location = new System.Drawing.Point(415, 513);
+            this.btn_join.Location = new System.Drawing.Point(378, 513);
             this.btn_join.Name = "btn_join";
             this.btn_join.Size = new System.Drawing.Size(195, 82);
             this.btn_join.TabIndex = 2;
