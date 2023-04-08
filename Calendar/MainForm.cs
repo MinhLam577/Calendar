@@ -158,7 +158,10 @@ namespace Calendar
 
         private void btn_addrmd_Click(object sender, EventArgs e)
         {
-
+            AddReminderForm f = new AddReminderForm();
+            f.ShowDialog();
         }
+
+        
     }
 }

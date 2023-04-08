@@ -1,18 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="CalendarModelStoreContainer" CdmEntityContainer="CalendarDB">
-    <EntitySetMapping Name="Reminders">
-      <EntityTypeMapping TypeName="CalendarModel.Reminder">
-        <MappingFragment StoreEntitySet="Reminder">
-          <ScalarProperty Name="BaoThuc" ColumnName="BaoThuc" />
-          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="RMDTime" ColumnName="RMDTime" />
-          <ScalarProperty Name="RMDDay" ColumnName="RMDDay" />
-          <ScalarProperty Name="RMDID" ColumnName="RMDID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="ListUserInAppointments">
       <EntityTypeMapping TypeName="CalendarModel.ListUserInAppointment">
         <MappingFragment StoreEntitySet="ListUserInAppointment">
@@ -39,6 +27,16 @@
           <ScalarProperty Name="DateAppointmentStart" ColumnName="DateAppointmentStart" />
           <ScalarProperty Name="AppName" ColumnName="AppName" />
           <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reminders">
+      <EntityTypeMapping TypeName="CalendarModel.Reminder">
+        <MappingFragment StoreEntitySet="Reminder">
+          <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="RMDTime" ColumnName="RMDTime" />
+          <ScalarProperty Name="RMDID" ColumnName="RMDID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

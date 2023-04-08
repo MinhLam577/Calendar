@@ -30,12 +30,10 @@
     <Key>
       <PropertyRef Name="RMDID" />
     </Key>
-    <Property Name="RMDID" Type="int" Nullable="false" />
-    <Property Name="RMDDay" Type="date" />
-    <Property Name="RMDTime" Type="time" Precision="7" />
+    <Property Name="RMDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RMDTime" Type="smalldatetime" />
     <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="PersonID" Type="int" />
-    <Property Name="BaoThuc" Type="bit" />
   </EntityType>
   <Association Name="FK_ListUserInAppointment_Appointment">
     <End Role="Appointment" Type="Self.Appointment" Multiplicity="0..1" />

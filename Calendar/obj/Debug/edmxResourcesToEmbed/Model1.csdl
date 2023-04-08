@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="CalendarModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="CalendarDB" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Reminders" EntityType="CalendarModel.Reminder" />
     <EntitySet Name="ListUserInAppointments" EntityType="CalendarModel.ListUserInAppointment" />
     <EntitySet Name="People" EntityType="CalendarModel.Person" />
     <AssociationSet Name="FK_ListUserInAppointment_Person" Association="CalendarModel.FK_ListUserInAppointment_Person">
@@ -12,28 +11,17 @@
       <End Role="Person" EntitySet="People" />
       <End Role="ListUserInAppointment" EntitySet="ListUserInAppointments" />
     </AssociationSet>
-    <AssociationSet Name="FK_Reminder_Person" Association="CalendarModel.FK_Reminder_Person">
-      <End Role="Person" EntitySet="People" />
-      <End Role="Reminder" EntitySet="Reminders" />
-    </AssociationSet>
     <EntitySet Name="Appointments" EntityType="CalendarModel.Appointment" />
     <AssociationSet Name="FK_ListUserInAppointment_Appointment" Association="CalendarModel.FK_ListUserInAppointment_Appointment">
       <End Role="Appointment" EntitySet="Appointments" />
       <End Role="ListUserInAppointment" EntitySet="ListUserInAppointments" />
     </AssociationSet>
+    <EntitySet Name="Reminders" EntityType="CalendarModel.Reminder" />
+    <AssociationSet Name="FK_Reminder_Person" Association="CalendarModel.FK_Reminder_Person">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Reminder" EntitySet="Reminders" />
+    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Reminder">
-    <Key>
-      <PropertyRef Name="RMDID" />
-    </Key>
-    <Property Name="RMDID" Type="Int32" Nullable="false" />
-    <Property Name="RMDDay" Type="DateTime" Precision="0" />
-    <Property Name="RMDTime" Type="Time" Precision="7" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PersonID" Type="Int32" />
-    <Property Name="BaoThuc" Type="Boolean" />
-    <NavigationProperty Name="Person" Relationship="CalendarModel.FK_Reminder_Person" FromRole="Reminder" ToRole="Person" />
-  </EntityType>
   <EntityType Name="ListUserInAppointment">
     <Key>
       <PropertyRef Name="ListID" />
@@ -81,18 +69,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Reminder_Person">
-    <End Type="CalendarModel.Person" Role="Person" Multiplicity="0..1" />
-    <End Type="CalendarModel.Reminder" Role="Reminder" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Person">
-        <PropertyRef Name="PersonID" />
-      </Principal>
-      <Dependent Role="Reminder">
-        <PropertyRef Name="PersonID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Appointment">
     <Key>
       <PropertyRef Name="AppointmentID" />
@@ -112,6 +88,28 @@
       </Principal>
       <Dependent Role="ListUserInAppointment">
         <PropertyRef Name="AppointmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Reminder">
+    <Key>
+      <PropertyRef Name="RMDID" />
+    </Key>
+    <Property Name="RMDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RMDTime" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PersonID" Type="Int32" />
+    <NavigationProperty Name="Person" Relationship="CalendarModel.FK_Reminder_Person" FromRole="Reminder" ToRole="Person" />
+  </EntityType>
+  <Association Name="FK_Reminder_Person">
+    <End Type="CalendarModel.Person" Role="Person" Multiplicity="0..1" />
+    <End Type="CalendarModel.Reminder" Role="Reminder" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="PersonID" />
+      </Principal>
+      <Dependent Role="Reminder">
+        <PropertyRef Name="PersonID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
