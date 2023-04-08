@@ -30,7 +30,7 @@
     <Key>
       <PropertyRef Name="RMDID" />
     </Key>
-    <Property Name="RMDID" Type="int" Nullable="false" />
+    <Property Name="RMDID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RMDTime" Type="smalldatetime" />
     <Property Name="Description" Type="nvarchar(max)" />
     <Property Name="PersonID" Type="int" />

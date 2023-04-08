@@ -95,7 +95,7 @@
     <Key>
       <PropertyRef Name="RMDID" />
     </Key>
-    <Property Name="RMDID" Type="Int32" Nullable="false" />
+    <Property Name="RMDID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RMDTime" Type="DateTime" Precision="0" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="PersonID" Type="Int32" />

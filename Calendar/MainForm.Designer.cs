@@ -34,6 +34,7 @@
             this.btn_join = new System.Windows.Forms.Button();
             this.dgv_user = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_app)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_user)).BeginInit();
             this.SuspendLayout();
@@ -45,13 +46,13 @@
             this.dgv_app.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_app.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_app.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_app.Location = new System.Drawing.Point(2, 1);
+            this.dgv_app.Location = new System.Drawing.Point(2, 61);
             this.dgv_app.Name = "dgv_app";
             this.dgv_app.ReadOnly = true;
             this.dgv_app.RowHeadersWidth = 51;
             this.dgv_app.RowTemplate.Height = 24;
             this.dgv_app.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_app.Size = new System.Drawing.Size(1785, 397);
+            this.dgv_app.Size = new System.Drawing.Size(1025, 431);
             this.dgv_app.TabIndex = 0;
             this.dgv_app.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_app_CellClick);
             // 
@@ -59,7 +60,7 @@
             // 
             this.btn_addapp.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_addapp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addapp.Location = new System.Drawing.Point(226, 474);
+            this.btn_addapp.Location = new System.Drawing.Point(12, 513);
             this.btn_addapp.Name = "btn_addapp";
             this.btn_addapp.Size = new System.Drawing.Size(195, 82);
             this.btn_addapp.TabIndex = 1;
@@ -71,7 +72,7 @@
             // 
             this.btn_addrmd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_addrmd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addrmd.Location = new System.Drawing.Point(226, 710);
+            this.btn_addrmd.Location = new System.Drawing.Point(795, 513);
             this.btn_addrmd.Name = "btn_addrmd";
             this.btn_addrmd.Size = new System.Drawing.Size(195, 82);
             this.btn_addrmd.TabIndex = 7;
@@ -83,7 +84,7 @@
             // 
             this.btn_join.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btn_join.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_join.Location = new System.Drawing.Point(226, 590);
+            this.btn_join.Location = new System.Drawing.Point(415, 513);
             this.btn_join.Name = "btn_join";
             this.btn_join.Size = new System.Drawing.Size(195, 82);
             this.btn_join.TabIndex = 2;
@@ -93,18 +94,17 @@
             // 
             // dgv_user
             // 
-            this.dgv_user.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_user.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dgv_user.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_user.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_user.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_user.Location = new System.Drawing.Point(672, 474);
+            this.dgv_user.Location = new System.Drawing.Point(1033, 61);
             this.dgv_user.Name = "dgv_user";
             this.dgv_user.ReadOnly = true;
             this.dgv_user.RowHeadersWidth = 51;
             this.dgv_user.RowTemplate.Height = 24;
             this.dgv_user.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_user.Size = new System.Drawing.Size(1115, 318);
+            this.dgv_user.Size = new System.Drawing.Size(766, 431);
             this.dgv_user.TabIndex = 9;
             // 
             // label1
@@ -112,17 +112,29 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1020, 420);
+            this.label1.Location = new System.Drawing.Point(1216, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(431, 36);
             this.label1.TabIndex = 10;
             this.label1.Text = "Danh sách user trong cuộc họp";
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(347, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(288, 36);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Danh sách cuộc họp";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1790, 798);
+            this.ClientSize = new System.Drawing.Size(1792, 960);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_user);
             this.Controls.Add(this.btn_join);
@@ -147,6 +159,7 @@
         private System.Windows.Forms.Button btn_join;
         private System.Windows.Forms.DataGridView dgv_user;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -161,5 +161,7 @@ namespace Calendar
             AddReminderForm f = new AddReminderForm();
             f.ShowDialog();
         }
+
+        
     }
 }
