@@ -30,7 +30,7 @@ namespace Calendar
         {
             db.Entry(listapp).State = System.Data.Entity.EntityState.Modified;
             return db.SaveChanges() > 0;
-        }
+        }   
 
         public ListUserInAppointment GetListUserByNullUserID(int APPID)
         {
