@@ -148,11 +148,15 @@ namespace Calendar
             {
                 foreach(var i in data)
                 {
-                    if((int)i.UserID == UserID)
+                    if(i.UserID != null)
                     {
-                        check = true;
-                        break;
+                        if ((int)i.UserID == UserID)
+                        {
+                            check = true;
+                            break;
+                        }
                     }
+                    
                 }
                 if (check == null)
                     check = false;                    
